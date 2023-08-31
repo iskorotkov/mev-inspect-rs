@@ -15,7 +15,7 @@ use ethers::{
 /// An inspector for Uniswap
 pub struct Balancer {
     bpool: BaseContract,
-    bproxy: BaseContract,
+    _bproxy: BaseContract,
 }
 
 type Swap = (Address, U256, Address, U256, U256);
@@ -101,7 +101,7 @@ impl Balancer {
                 serde_json::from_str::<Abi>(include_str!("../../abi/bpool.json"))
                     .expect("could not parse uniswap abi")
             }),
-            bproxy: BaseContract::from({
+            _bproxy: BaseContract::from({
                 serde_json::from_str::<Abi>(include_str!("../../abi/bproxy.json"))
                     .expect("could not parse uniswap abi")
             }),

@@ -580,7 +580,7 @@ mod tests {
         inspector.reduce(&mut inspection);
         inspection.prune();
 
-        let known = inspection.known();
+        let _known = inspection.known();
 
         assert_eq!(inspection.status, Status::Reverted);
         assert_eq!(inspection.protocols, set![Protocol::Uniswap])
